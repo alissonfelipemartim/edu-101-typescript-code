@@ -13,11 +13,11 @@ async function run() {
   const worker = await Worker.create({
     connection,
     namespace: 'default',
-    taskQueue: 'hello-world',
+    taskQueue: 'greeting-tasks',
     // Workflows are registered using a path as they run in a separate JS context.
     workflowsPath: require.resolve('./workflows'),
   });
-
+  
   // Step 3: Start accepting tasks on the `greeting-tasks` queue
   //
   // The worker runs until it encounters an unexepected error or the process receives a shutdown signal registered on
